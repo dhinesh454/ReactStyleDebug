@@ -18,6 +18,7 @@ const AddUser = (props) => {
    const enteredUsername=enteredInputName.current.value;
    const enteredAge=enteredInputAge.current.value;
     console.log(enteredUsername,enteredAge);
+    
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       setError({
         title: 'Invalid input',
@@ -33,6 +34,8 @@ const AddUser = (props) => {
       return;
     }
     props.onAddUser(enteredUsername, enteredAge);
+    enteredInputName.current.value='';
+    enteredInputAge.current.value='';
     // setEnteredUsername('');
     // setEnteredAge('');
   };
